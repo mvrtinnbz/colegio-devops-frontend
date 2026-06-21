@@ -56,7 +56,9 @@ jobs:
 
           kubectl apply -f k8s/front-rendered.yml
 
-      - name: Kubernetes frontend pods y svc
+      - name: Verificar despliegue frontend
         run: |
+          kubectl rollout status deployment/frontend-web --timeout=240s
           kubectl get pods
-          kubectl get svc
+          kubectl get svc frontend-service
+          kubectl get endpoints frontend-service
