@@ -1,6 +1,4 @@
-// ATENCIÓN: Cambia el 8080 por el puerto donde corra tu microservicio de Comunicaciones (Ej: 8081, 8082, etc.)
-// Si corre en el mismo proyecto monolítico, déjalo en 8080.
-const API_BASE = 'http://localhost:8080/api'; 
+const API_BASE = '/api'; 
 
 const getAuthHeaders = () => {
     const token = localStorage.getItem('token_colegio');
@@ -26,9 +24,6 @@ export const obtenerAvisos = async () => {
 
 export const crearAviso = async (avisoData) => {
     try {
-        // 💡 AQUÍ ESTÁ LA MAGIA: 
-        // Tomamos el título y contenido que vienen del formulario (...avisoData)
-        // y le inyectamos automáticamente el remitente que exige el servidor.
         const datosConRemitente = {
             ...avisoData,
             remitente: "Dirección Académica" // <-- Valor estático por defecto

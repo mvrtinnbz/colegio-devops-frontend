@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8080/api/academico';
+const API_BASE = '/api/academico';
 
 const getAuthHeaders = () => {
     const token = localStorage.getItem('token_colegio');
