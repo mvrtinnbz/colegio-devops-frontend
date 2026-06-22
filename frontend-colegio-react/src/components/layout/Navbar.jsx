@@ -8,7 +8,7 @@ function Navbar() {
 
     const handleCerrarSesion = () => {
         localStorage.clear(); // Borra el token
-        window.location.href = '/login'; 
+        window.location.href = '/'; 
     };
 
     return (
